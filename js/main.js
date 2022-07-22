@@ -1,6 +1,14 @@
 // Checkers
 
 // Global Variables
+let cnv = document.getElementById("my-canvas");
+let ctx = cnv.getContext("2d");
+
+cnv.width = 700;
+cnv.height = 600;
+
+let mouseX;
+let mouseY;
 let spaces = allSpaces();
 let player = 1;
 let boardArray = 
