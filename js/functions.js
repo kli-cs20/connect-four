@@ -1,5 +1,6 @@
 // Function Library
 
+// 7 x 6 Board
 function drawBoard() {
     for (let x = 100; x < 700; x += 100) {
         line(x, 0, x, 600);
@@ -7,17 +8,6 @@ function drawBoard() {
     for (let y = 100; y < 600; y += 100) {
         line(0, y, 700, y);
     }
-}
-
-function allSpaces() {
-    let temp = [];
-    for (let y = 50; y <= 750; y += 100) {
-        for (let x = 50; x <= 750; x += 100) {
-            temp.push({x: x, y: y});
-        
-        }
-    }
-    return temp;
 }
 
 function playedSquares() {
@@ -28,6 +18,7 @@ function playedSquares() {
     }
 }
 
+// Convert mouseX to col #
 function trackCursor() {
     for (let i = 100; i <= 700; i += 100) {
         if (mouseX < i && mouseX > i - 100) {
@@ -39,8 +30,8 @@ function trackCursor() {
 function hoverPiece() {
     let col = trackCursor();
     let row = findEmptySpace(col - 1);
-    let x = col * 100 - 50;
-    let y = row * 100 - 50;
+    let x = col * 100 - 50;  // Convert col # to x-coordinate
+    let y = row * 100 - 50;  // Convert row # to y-coordinate
     hoverFillColor();
     circle(x, y, 40, "fill");
 }
@@ -54,18 +45,17 @@ function findEmptySpace(col) {
 }
 
 function playPiece() {
-    let c; 
     let col = trackCursor();
     let row = findEmptySpace(col - 1);
     let x = col * 100 - 50;
     let y = row * 100 - 50;  
     if (player === 1) {
-        c = "red";
+        color = "red";
     } else {
-        c = "blue";
+        color = "blue";
     }
 
-    occupiedSpaces.push({x: x, y: y, color: c});
+    occupiedSpaces.push({x: x, y: y, color: color});
     boardArray[row - 1][col - 1] = 1; 
 }
 

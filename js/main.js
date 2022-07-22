@@ -9,8 +9,8 @@ cnv.height = 600;
 
 let mouseX;
 let mouseY;
-let spaces = allSpaces();
 let player = 1;
+let color;
 let boardArray = 
   [ [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
