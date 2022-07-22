@@ -54,7 +54,7 @@ function findEmptySpace(col) {
 }
 
 function playPiece() {
-    let c;
+    let c; 
     let col = trackCursor();
     let row = findEmptySpace(col - 1);
     let x = col * 100 - 50;

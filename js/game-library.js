@@ -51,12 +51,3 @@ function rectCollide(rect1, rect2) {
   let be2 = rect2.y + rect2.h;
   return le1 < re2 && re1 > le2 && be1 > te2 && te1 < be2;
 }
-
-function mousemoveHandlerLib(event) {
-  // Get rectangle info about canvas location
-  let cnvRect = cnv.getBoundingClientRect();
-
-  // Calc mouse coordinates using mouse event and canvas location info
-  mouseX = Math.round(event.clientX - cnvRect.left);
-  mouseY = Math.round(event.clientY - cnvRect.top);
-}

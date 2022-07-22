@@ -40,3 +40,12 @@ function keydownHandler(e) {
     }
 }
 
+function mousemoveHandlerLib(event) {
+    // Get rectangle info about canvas location
+    let cnvRect = cnv.getBoundingClientRect();
+  
+    // Calc mouse coordinates using mouse event and canvas location info
+    mouseX = Math.round(event.clientX - cnvRect.left);
+    mouseY = Math.round(event.clientY - cnvRect.top);
+  }
+
