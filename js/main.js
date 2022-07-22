@@ -7,14 +7,12 @@ let aliens = initAliens();
 requestAnimationFrame(draw)
 
 function draw() {
-    background("white");
     drawBoard();
 
+    moveAliens(aliens[0]);
     for (let i = 0; i < aliens.length; i++) {
         drawAliens(aliens[i]);
-        moveAliens(aliens[i]);
     }
-
 
     requestAnimationFrame(draw)
 }

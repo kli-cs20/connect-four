@@ -34,6 +34,13 @@ function drawAliens(thisAlien) {
 }
 
 function moveAliens(thisAlien) {
+    emptySpace(thisAlien);
     fill("green");
-    circle(thisAlien.x + 100, thisAlien.y, 40, "fill");
+    circle(thisAlien.x + 600, thisAlien.y, 40, "fill");
 }
+
+function emptySpace(thisSpace) {
+    fill("white");
+    circle(thisSpace.x, thisSpace.y, 49, "fill");
+}
+
