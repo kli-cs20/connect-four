@@ -34,6 +34,9 @@ function draw() {
     // Player
     hoverPiece();
 
+    // Connect 4
+    checkFour();
+
     requestAnimationFrame(draw)
 }
 

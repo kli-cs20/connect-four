@@ -13,7 +13,7 @@ function drawBoard() {
 function playedSquares() {
     for (let i = 0; i < occupiedSpaces.length; i++) {
         let space = occupiedSpaces[i];
-        fill(space.color);
+        fill(space.c);
         circle(space.x, space.y, 40, "fill");
     }
 }
@@ -55,7 +55,7 @@ function playPiece() {
         color = "blue";
     }
 
-    occupiedSpaces.push({x: x, y: y, color: color});
+    occupiedSpaces.push({x: x, y: y, c: color});
     boardArray[row - 1][col - 1] = 1; 
 }
 
