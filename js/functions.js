@@ -30,13 +30,47 @@ function trackCursor() {
 
 function hoverPiece() {
     let col = trackCursor();
+    let row = findEmptySpace(col - 1);
     let x = col * 100 - 50;
-    if (player === 1) {
-        fill("rgb(255, 0, 0, 0.5");
-    }
-    circle(x, 550, 40, "fill");
+    let y = row * 100 - 50;
+    hoverFillColor();
+    circle(x, y, 40, "fill");
 }
 
-function findEmptySpace() {
+function findEmptySpace(col) {
+    for (let row = 5; row >= 0; row--) {
+        if (boardArray[row][col] === 0) {
+            return row + 1
+        } 
+    }
+}
 
+function playPiece() {
+    let col = trackCursor();
+    let row = findEmptySpace(col - 1);
+    let x = col * 100 - 50;
+    let y = row * 100 - 50;
+
+    occupiedSpaces.push({x: x, y: y});
+    boardArray[row - 1][col - 1] = 1;
+
+    playFillColor();
+    circle(x, y, 40, "fill");
+}
+
+// Helper Functions
+function hoverFillColor() {
+    if (player === 1) {
+        fill("rgb(255, 0, 0, 0.5");
+    } else if (player === 2) {
+        fill("rgb(0, 0, 255, 0.5");
+    }
+}
+
+function playFillColor() {
+    if (player === 1) {
+        fill("rgb(255, 0, 0");
+    } else if (player === 2) {
+        fill("rgb(0, 0, 255");
+    }
 }
