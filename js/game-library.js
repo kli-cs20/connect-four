@@ -10,8 +10,8 @@ let mouseIsPressed = false;
 let keyPressed = {};
 
 // Canvas Default Size
-cnv.width = 400;
-cnv.height = 400;
+cnv.width = 800;
+cnv.height = 800;
 
 // Set the canvas to the provided size
 function canvasSize(width, height) {

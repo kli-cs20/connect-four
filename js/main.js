@@ -1,1 +1,4 @@
-console.log("Hello World");
+// Checkers
+
+// Global Variables
+let spaces = allSpaces();
