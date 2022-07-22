@@ -1,6 +1,4 @@
 // Checkers
-let occupiedSpaces = [];
-
 
 // Global Variables
 let spaces = allSpaces();
@@ -12,6 +10,7 @@ let boardArray =
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0] ];
+let occupiedSpaces = [];
 
 
 requestAnimationFrame(draw)
@@ -22,6 +21,7 @@ function draw() {
     drawBoard();
 
     // Occupied Spaces
+    playedSquares();
 
     // Player
     hoverPiece();
@@ -35,7 +35,8 @@ document.addEventListener("keydown", keydownHandler);
 
 function keydownHandler(e) {
     if (e.keyCode === 32) {
-        playPiece();  
+        playPiece();
+        togglePlayer();
     }
 }
 

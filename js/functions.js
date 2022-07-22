@@ -20,6 +20,14 @@ function allSpaces() {
     return temp;
 }
 
+function playedSquares() {
+    for (let i = 0; i < occupiedSpaces.length; i++) {
+        let space = occupiedSpaces[i];
+        fill(space.color);
+        circle(space.x, space.y, 40, "fill");
+    }
+}
+
 function trackCursor() {
     for (let i = 100; i <= 700; i += 100) {
         if (mouseX < i && mouseX > i - 100) {
@@ -46,23 +54,26 @@ function findEmptySpace(col) {
 }
 
 function playPiece() {
+    let c;
     let col = trackCursor();
     let row = findEmptySpace(col - 1);
     let x = col * 100 - 50;
     let y = row * 100 - 50;  
+    if (player === 1) {
+        c = "red";
+    } else {
+        c = "blue";
+    }
 
-    occupiedSpaces.push({x: x, y: y});
-    boardArray[row - 1][col - 1] = 1;
-
-    playFillColor();
-    circle(x, y, 40, "fill");
+    occupiedSpaces.push({x: x, y: y, color: c});
+    boardArray[row - 1][col - 1] = 1; 
 }
 
 // Helper Functions
 function hoverFillColor() {
     if (player === 1) {
         fill("rgb(255, 0, 0, 0.5");
-    } else if (player === 2) {
+    } else {
         fill("rgb(0, 0, 255, 0.5");
     }
 }
@@ -70,7 +81,15 @@ function hoverFillColor() {
 function playFillColor() {
     if (player === 1) {
         fill("rgb(255, 0, 0");
-    } else if (player === 2) {
+    } else {
         fill("rgb(0, 0, 255");
+    }
+}
+
+function togglePlayer() {
+    if (player === 1) {
+        player = 2;
+    } else {
+        player = 1;
     }
 }
