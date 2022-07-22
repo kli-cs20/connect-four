@@ -49,7 +49,7 @@ function playPiece() {
     let col = trackCursor();
     let row = findEmptySpace(col - 1);
     let x = col * 100 - 50;
-    let y = row * 100 - 50;
+    let y = row * 100 - 50;  
 
     occupiedSpaces.push({x: x, y: y});
     boardArray[row - 1][col - 1] = 1;

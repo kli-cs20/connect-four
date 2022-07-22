@@ -29,4 +29,13 @@ function draw() {
     requestAnimationFrame(draw)
 }
 
+// Event Listeners & Handlers
+document.addEventListener("mousemove", mousemoveHandlerLib);
+document.addEventListener("keydown", keydownHandler);
+
+function keydownHandler(e) {
+    if (e.keyCode === 32) {
+        playPiece();  
+    }
+}
 

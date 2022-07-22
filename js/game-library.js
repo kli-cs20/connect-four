@@ -52,13 +52,6 @@ function rectCollide(rect1, rect2) {
   return le1 < re2 && re1 > le2 && be1 > te2 && te1 < be2;
 }
 
-// Event Listeners & Handlers
-document.addEventListener("mousedown", () => mouseIsPressed = true);
-document.addEventListener("mouseup", () => mouseIsPressed = false);
-document.addEventListener("mousemove", mousemoveHandlerLib);
-document.addEventListener("keydown", (e) => keyPressed[e.code] = true);
-document.addEventListener("keyup", (e) => keyPressed[e.code] = false);
-
 function mousemoveHandlerLib(event) {
   // Get rectangle info about canvas location
   let cnvRect = cnv.getBoundingClientRect();
