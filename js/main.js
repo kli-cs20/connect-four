@@ -2,17 +2,16 @@
 
 // Global Variables
 let spaces = allSpaces();
-let aliens = initAliens();
+let player = 1;
 
 requestAnimationFrame(draw)
 
 function draw() {
+    background("white");
     drawBoard();
 
-    moveAliens(aliens[0]);
-    for (let i = 0; i < aliens.length; i++) {
-        drawAliens(aliens[i]);
-    }
+    hoverPiece();
+    
 
     requestAnimationFrame(draw)
 }

@@ -1,11 +1,11 @@
 // Function Library
 
 function drawBoard() {
-    for (let x = 100; x < 800; x += 100) {
-        line(x, 0, x, 800);
+    for (let x = 100; x < 700; x += 100) {
+        line(x, 0, x, 600);
     }
-    for (let y = 100; y < 800; y += 100) {
-        line(0, y, 800, y);
+    for (let y = 100; y < 600; y += 100) {
+        line(0, y, 700, y);
     }
 }
 
@@ -20,27 +20,23 @@ function allSpaces() {
     return temp;
 }
 
-function initAliens() {
-    let temp = [];
-    for (let i = 0; i < 6; i++) {
-        temp.push(spaces[i]);
+function trackCursor() {
+    for (let i = 100; i <= 700; i += 100) {
+        if (mouseX < i && mouseX > i - 100) {
+            return i / 100;
+        }
     }
-    return temp;
 }
 
-function drawAliens(thisAlien) {
-    fill("green");
-    circle(thisAlien.x, thisAlien.y, 40, "fill");
+function hoverPiece() {
+    let col = trackCursor();
+    let x = col * 100 - 50;
+    if (player === 1) {
+        fill("rgb(255, 0, 0, 0.5");
+    }
+    circle(x, 550, 40, "fill");
 }
 
-function moveAliens(thisAlien) {
-    emptySpace(thisAlien);
-    fill("green");
-    circle(thisAlien.x + 600, thisAlien.y, 40, "fill");
-}
+function findEmptySpace() {
 
-function emptySpace(thisSpace) {
-    fill("white");
-    circle(thisSpace.x, thisSpace.y, 49, "fill");
 }
-
